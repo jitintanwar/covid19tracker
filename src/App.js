@@ -14,22 +14,13 @@ class App extends Component {
 		this.setState({ data });
 	}
 
-	handleCountryChange = async (country) => {
-
-		// if(country === 'global'){
-		// 	country = null
-		// }
-		
+	handleCountryChange = async (country) => {		
 		const fetchedData = await fetchData(country);
-			console.log(fetchedData)
-			//console.log(country)
-			this.setState({ data: fetchedData , country: country});
-		// }
+		this.setState({ data: fetchedData , country: country});
 	}
 
 	render() {
 		const { data, country } = this.state;
-		//console.log(data);
 		return (
 			<div className={styles.container}>
 				<img className={styles.image} src={image} />
